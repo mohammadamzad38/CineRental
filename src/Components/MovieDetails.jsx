@@ -1,3 +1,5 @@
+import {getImageUrl} from "./Utils/Cine-utility"
+
 const MovieDetails = ({ movie, onClose }) => {
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm">
@@ -5,8 +7,8 @@ const MovieDetails = ({ movie, onClose }) => {
         <div className="bg-white shadow-md rounded-2xl sm:grid sm:grid-cols-[2fr_1fr] overflow-hidden">
           <img
             className="sm:order-2 w-full object-cover h-full max-sm:max-h-[300px]"
-            src="./assets/movie-1.png"
-            alt=""
+            src={getImageUrl(movie.cover)}
+            alt={movie.title}
           />
           <div className="p-5 lg:p-11">
             <div className="">
