@@ -1,4 +1,4 @@
-import  {useState} from "react";
+import { useState } from "react";
 import MovieDetails from "./MovieDetails";
 import Ratings from "./Ratings";
 import { getImageUrl } from "./Utils/Cine-utility";
@@ -15,6 +15,10 @@ export default function MovieCart({ movie }) {
   function handleMovieSelection(movie) {
     setSelectMovie(movie);
     setShowModal(true);
+  }
+
+  function handleAddToCart({ movie }) {
+    console.log(movie);
   }
 
   return (
@@ -37,6 +41,7 @@ export default function MovieCart({ movie }) {
             <a
               className="primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
               href="#"
+              onClick={() => handleAddToCart(movie)}
             >
               <img src="./assets/tag.svg" alt="" />
               <span>{movie.price} | Add to Cart</span>
